@@ -1,47 +1,27 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Meine Bildergalerie</h1>
+    <ImageGallery :images="bilder" @bildKlick="bildGeklickt" />
+  </div>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+import ImageGallery from './components/ImageGallery.vue'
+
+const bilder = ref([
+  'https://images.unsplash.com/photo-1584395630827-860eee694d7b?w=600&h=400',
+  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400',
+  'https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=600&h=400',
+  'https://images.unsplash.com/photo-1531177071257-e7f851fc6ebd?w=600&h=400',
+])
+
+
+function bildGeklickt(index) {
+  console.log('Bild wurde angeklickt:', index)
+}
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+/* Opsiyonel ek stiller buraya */
 </style>
