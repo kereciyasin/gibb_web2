@@ -1,0 +1,15 @@
+.card {
+  border: none;
+}
+.card-body {
+  padding: 2rem 2rem;
+}
+input.form-control {
+  height: 48px;
+  font-size: 1.2em;
+}
+.btn {
+  min-width: 48px;
+  min-height: 48px;
+  font-size: 1.1em;
+}
